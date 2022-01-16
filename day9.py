@@ -16,19 +16,19 @@ def q1():
 def q2():
     unchecked = set([(x, y) for x in range(len(data[0])) for y in range(len(data))])
     basin_counter = -1
-    basins = [[] for _ in range(10000)]  # 100 should be enough?
+    basins = [0 for _ in range(10000)]  # 100 should be enough?
     to_check = []
     while len(unchecked) > 0:  # start a basin
         to_check.append(unchecked.pop())  # I do not like how I did this
-        unchecked.add(to_check[0])
+        unchecked.add(to_check[-1])
         basin_counter += 1
         while len(to_check) > 0:  # iterate through members of that basin
             curr = to_check.pop()
             if curr in unchecked and data[curr[1]][curr[0]] != 9:
-                basins[basin_counter].append(curr)
+                basins[basin_counter] += 1
                 to_check.extend([n for n in neighbors(curr[0], curr[1]) if n in unchecked])
             unchecked.discard(curr)
-    basinsizes = sorted([len(i) for i in basins], reverse=True)[0:3]
+    basinsizes = sorted(basins, reverse=True)[0:3]
     print(basinsizes)
     print(prod(basinsizes))
 
