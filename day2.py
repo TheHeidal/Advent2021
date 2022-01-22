@@ -18,7 +18,7 @@ def part2(lst):
 
 
 if __name__ == '__main__':
-    f = open('inputs/inputD2.txt', 'r')
+    f = open('inputs/D2.txt', 'r')
     input = [x.split() for x in f.readlines()]
     f.close()
     print(part1(input))
