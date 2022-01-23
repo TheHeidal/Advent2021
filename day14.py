@@ -1,7 +1,12 @@
+import logging
 import multiprocessing as mp
+import os
 from collections import Counter
 from collections import defaultdict as ddict
 from queue import Empty
+from datetime import datetime
+
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 
 
 def mtstr(): return ''
@@ -26,42 +31,56 @@ def q1():
     print(solution)
 
 
-def q2(poly, steps):
-    cnt_0 = Counter([i for i in poly])
-    cnts = [Counter() for _ in range(3)]
+def q2(poly, steps, rule_dict):
+    start = datetime.now()
+    cnt = Counter([i for i in poly])
+    cnt_q = mp.Queue()
     q = mp.Queue()
     for pair in [(poly[i:i + 2], steps) for i in range(len(poly) - 1)]:
         q.put(pair)
-    processes = [mp.Process(target=consume, args=(q, cnts[j])) for j in range(3)]
+    processes = [mp.Process(target=consume, args=(q, cnt_q, rule_dict)) for _ in range(4)]
     for p in processes:
         p.start()
     for p in processes:
         p.join()
-    return cnt_0 + cnts[0] + cnts[1] + cnts[2]
+    while not cnt_q.empty():
+        cnt = cnt + cnt_q.get()
+    elapsed = datetime.now() - start
+    print(elapsed)
+    return cnt
 
 
-def consume(queue, counter):
-    while queue.full():
+def consume(pair_queue, counter_queue, rule_dict):
+    counter = Counter()
+    logging.debug(f"{os.getpid()} started!")
+    while not pair_queue.empty():
         try:
-            pair, iter_c = queue.get()
+            pair, iter_c = pair_queue.get()
+            logging.debug(f"{os.getpid()} working on {pair}, {iter_c}")
             if iter_c > 0:
-                if pair in rules:
-                    counter[rules[pair]] += 1
-                    queue.append((pair[0] + rules[pair], iter_c - 1))
-                    queue.append((rules[pair] + pair[1], iter_c - 1))
-            queue.task_done()
+                if pair in rule_dict:
+                    counter[rule_dict[pair]] += 1
+                    pair_queue.put((pair[0] + rule_dict[pair], iter_c - 1))
+                    logging.debug(f"{os.getpid()} inserted {pair[0] + rule_dict[pair], iter_c - 1}")
+                    pair_queue.put((rule_dict[pair] + pair[1], iter_c - 1))
+                    logging.debug(f"{os.getpid()} inserted {rule_dict[pair] + pair[1], iter_c - 1}")
         except Empty:
+            counter_queue.put(counter)
+            logging.debug(f"{os.getpid()} finished")
             return
+    counter_queue.put(counter)
+    logging.debug(f"{os.getpid()} finished")
+    return
 
 
 if __name__ == '__main__':
-    f = open('inputs/D14test.txt', 'r')
+    f = open('inputs/D14.txt', 'r')
     polymer = f.readline().strip()
     rules = ddict(mtstr, [x.strip().split(sep=' -> ') for x in f.readlines()[1:]])
     f.close()
-    STEPS = 10
+    STEPS = 20
     count_dict = Counter()
-    counts = q2(polymer, STEPS)
+    counts = q2(polymer, STEPS, rules)
     _, most_common = counts.most_common(1)[0]
     _, least_common = counts.most_common()[-1]
     solution = most_common - least_common
