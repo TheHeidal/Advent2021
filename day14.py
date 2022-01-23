@@ -5,12 +5,6 @@ from collections import defaultdict as ddict
 logging.basicConfig(filename='day14.log', encoding='utf-8', level=logging.DEBUG)
 
 
-def mtstr(): return ''
-
-
-def zero(): return 0
-
-
 def cached_fn(poly, steps, rule_dict):
     # lookup_map steps is offset by one, so result of applying AB for 3 steps is lookup_map['AB'][2]
     lookup_map = ddict(Counter, {rule: [None for _ in range(steps)] for rule in rule_dict.keys()})
