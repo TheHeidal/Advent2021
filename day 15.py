@@ -77,7 +77,7 @@ def a_star_frontier(risks, end):
 q2 = True
 
 if __name__ == '__main__':
-    filename = 'inputs/D15.txt'
+    filename = 'inputs/Day15/D15.txt'
     f = open(filename, 'r')
     risks = np.array([[int(c) for c in line.strip()] for line in f.readlines()], dtype=np.int8)
     f.close()
@@ -88,7 +88,7 @@ if __name__ == '__main__':
         mask = risks_full > 9
         risks = np.where(risks_full > 9, risks_full - 9, risks_full)
         if filename == 'inputs/D15test.txt':
-            g = open('inputs/D15testbig.txt', 'r')
+            g = open('inputs/Day15/D15testbig.txt', 'r')
             test_array = np.array([[int(c) for c in line.strip()] for line in g.readlines()], dtype=np.int8)
             g.close()
             assert np.array_equal(risks, test_array)
@@ -96,11 +96,3 @@ if __name__ == '__main__':
     max_y = len(risks) - 1
     res = a_star_frontier(risks, (max_x, max_y))
     print(res)
-    #
-    # queue = PriorityQueue()
-    # queue.put((heuristic(0, 0), 0, [(0, 0)]))
-    #
-    # paths = [(heuristic(0, 0), 0, [(0, 0)])]  # estimated risk, actual risk, path so far
-    # heapify(paths)
-    # lowest_risk = a_star(paths, risks)
-    # print(lowest_risk)
