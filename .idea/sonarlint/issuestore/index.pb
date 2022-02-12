@@ -69,8 +69,6 @@ A
 day8.py,3\8\38eebdaf370979cb1d6bb58b7f1f0c039ea37dfd
 9
 	day14.log,b\3\b35587570a7961c80742b27af5af6e5fef2dab33
-8
-day14.py,8\7\877582442768df6370df9a21f25c8385c8ec4b84
 <
 neighbors.py,a\f\afb3a8313db7ba2336dd8cd30de748c80fca16de
 G
@@ -91,3 +89,44 @@ F
 inputs/Day16/input.txt,9\2\9248e8ba4f6e4cd0cfdcad689114e1f083d2f322
 H
 inputs/Day15/D15mike.txt,4\7\47863efac514e3a85aaf9f27af0d92421c9799f7
+H
+inputs/Day15/D15test.txt,2\c\2cae8bc2cd76a3caf9b9a4b754ba78d3beb802f6
+D
+inputs/Day15/D15.txt,8\c\8cdb9b9c3700eb8cb664d01fc2149a6653ddb5bc
+H
+inputs/Day15/D15tiny.txt,c\d\cd5f4a974d9c34ca724b065fd00c5f876ec10df3
+K
+inputs/Day15/D15testbig.txt,6\f\6ff54e19060b1e8667a1445d936e14ecd6e6a189
+8
+day11.py,e\5\e5edd1ccf6bd1f85f97d11f80c1705449b526432
+H
+inputs/Day11/D11test.txt,6\6\6654f382e1a308f5a837bff0cf6644884542970e
+I
+inputs/Day11/d11test1.txt,1\9\19816ca2425a6f3f51196b3b1ace2de7e489fa94
+D
+inputs/Day11/D11.txt,a\2\a206398b9954596f8dd1c18950e778527a8e854a
+8
+day12.py,4\0\40199764d164743a3fb464edd7baae30de396b73
+I
+inputs/Day12/D12test0.txt,f\f\ff3364cd3feb7cc6883a586e882d979ce997d08c
+I
+inputs/Day12/D12test1.txt,b\7\b759a70295cc27e9508041ccc158f9df54bd1c6d
+I
+inputs/Day12/D12test2.txt,0\0\00421e10432b762bd056aa7e7b24fe17519d6e64
+D
+inputs/Day12/D12.txt,1\6\1632842d5f09c75c58109bec4b3e68198002d272
+9
+	day 15.py,c\6\c65722aedc02254522456cd40886302eb903e06e
+B
+inputs/D17data.txt,f\7\f7991f1268fc4b01b3067b0c3a0df9c7ab37018f
+:
+
+day17p2.py,d\8\d80459341811097eee5cb3c256eb083fdee943ae
+8
+day16.py,2\5\25283bd167c1552d814bdc84c4d53a331a4c1385
+8
+day14.py,8\7\877582442768df6370df9a21f25c8385c8ec4b84
+9
+	day18.log,3\c\3ce0f6e4cd69244e19c33d937b5d532d4cd38e37
+8
+day18.py,5\7\57d55f00c1b77ad36b01f9c62d0866c376b05cca
