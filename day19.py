@@ -1,10 +1,8 @@
 import logging
 import re
+from collections import deque, defaultdict
 
 import numpy as np
-
-scanner_name = re.compile(r'--- scanner (\d+) ---')
-beacon_coord = re.compile(r'(-?\d*),(-?\d*),(-?\d*)')
 
 logging.basicConfig(filename='day19.log',
                     encoding='utf-8',
@@ -15,6 +13,10 @@ logging.basicConfig(filename='day19.log',
 
 
 def read_input(filename):
+    """Parses input files and returns a list of np arrays of beacon locations"""
+    scanner_name = re.compile(r'--- scanner (\d+) ---')
+    beacon_coord = re.compile(r'(-?\d*),(-?\d*),(-?\d*)')
+
     logging.info(f'reading {filename}')
     file = open(filename, 'r')
     scanner_lists = []
@@ -26,7 +28,8 @@ def read_input(filename):
         elif line == '\n':
             scanner_lists.append(np.array(curr_ls))
         else:
-            curr_ls.append(match_array(beacon_coord.match(line)))
+            obj = beacon_coord.match(line)
+            curr_ls.append([int(obj.group(1)), int(obj.group(2)), int(obj.group(3))])
     file.close()
     return scanner_lists
 
@@ -71,95 +74,181 @@ class Scanner:
         return f"scanner {self.index}"
 
 
-R90 = {'x': np.array([[1, 0, 0],
-                      [0, 0, 1],
-                      [0, -1, 0]], int),
-       'y': np.array([[0, 0, 1],
-                      [0, 1, 0],
-                      [-1, 0, 0]], int),
-       'z': np.array([[0, 1, 0],
-                      [-1, 0, 0],
-                      [0, 0, 1]], int)}
+x90 = np.array([[1, 0, 0],
+                [0, 0, -1],
+                [0, 1, 0]], dtype=np.int32)
+y90 = np.array([[0, 0, 1],
+                [0, 1, 0],
+                [-1, 0, 0]], dtype=np.int32)
+z90 = np.array([[0, -1, 0],
+                [1, 0, 0],
+                [0, 0, 1]], dtype=np.int32)
 
-xr = [np.identity(3, int), (R90['x']), R90['x'] @ R90['x'], R90['x'] @ R90['x'] @ R90['x']]
-yr = [np.identity(3, int), (R90['y']), R90['y'] @ R90['y'], R90['y'] @ R90['y'] @ R90['y']]
-zr = [np.identity(3, int), (R90['z']), R90['z'] @ R90['z'], R90['z'] @ R90['z'] @ R90['z']]
+# assume scanner starts facing positive x
+pos_x = [np.identity(3, dtype=np.int32), x90, x90 @ x90, x90 @ x90 @ x90]
+neg_x = [z90 @ z90 @ xr for xr in pos_x]
+pos_y = [z90 @ yr for yr in [np.identity(3, dtype=np.int32), y90, y90 @ y90, y90 @ y90 @ y90]]
+neg_y = [z90 @ z90 @ z90 @ yr for yr in [np.identity(3, dtype=np.int32), y90, y90 @ y90, y90 @ y90 @ y90]]
+pos_z = [y90 @ zr for zr in [np.identity(3, dtype=np.int32), z90, z90 @ z90, z90 @ z90 @ z90]]
+neg_z = [y90 @ y90 @ y90 @ zr for zr in [np.identity(3, dtype=np.int32), z90, z90 @ z90, z90 @ z90 @ z90]]
 
-ROTATIONS = np.array([xr[x % 4] @ yr[y % 4] @ zr[z % 4]
-                      for x, y in [(0, 0), (1, 0), (2, 0), (3, 0), (0, 1), (0, 3)] for z in range(4)])
+# probably should convert to enumeration
+ROTATIONS = np.concatenate([pos_x, neg_x, pos_y, neg_y, pos_z, neg_z])
 
-
-# x is right, y is forwards, z is up. x and z follow left hand rule, y follows right (should probably fix that)
-
-def find_matches():
-    solved_scanners = [0]
-    for s_scanner_i in solved_scanners:
-        while len(scn_dict[s_scanner_i].uncompared):
-            u_scanner_i = scn_dict[s_scanner_i].uncompared.pop()
-            if not scn_dict[u_scanner_i].isSolved:
-                logging.debug(f'comparing scanner {s_scanner_i:2} to scanner {u_scanner_i:2}')
-                res = match_scanners(s_scanner_i, u_scanner_i)
-                scn_dict[s_scanner_i].uncompared.discard(u_scanner_i)
-                scn_dict[u_scanner_i].uncompared.discard(s_scanner_i)
-                if res is not None:
-                    logging.debug(f'overlap found!')
-                    s_beacon_i, u_beacon_i, rot_i = res
-                    scn_dict[u_scanner_i].solve(s_scanner_i, s_beacon_i, u_beacon_i, rot_i)
-                    solved_scanners.append(u_scanner_i)
-    return None
-
-
-def match_scanners(s_scan_i, u_scan_i):
-    """Given a solved and an unsolved scanner, find if they have overlapping detection cubes"""
-    # for each beacon b (until we are sure we must have tried one in the overlap cloud):
-    #   get the coordinates of every beacon in the cloud relative to b (rebase onto b)
-    #   for each scanner we haven't compared the solved scanner to (the comparison scanner)
-    #       for each beacon c_b in the comparison scanner's cloud
-    #           for each possible rotation r:
-    #               rebase all beacons onto c_b
-    #               rotate all beacons by r
-    #               if the rebased clouds have at least 12 beacons in common, we know
-    #                   - the comparison scanner can be corrected with rotation r
-    #                   - b and cb are the same beacon
-    #                   - true location of every beacon seen by comp_scanner is r@(beacon - cb) + origin beacon
-
-    s_beacons = scn_dict[s_scan_i].s_cloud
-    reb_s_beacons = s_beacons - np.expand_dims(s_beacons, axis=1)
-    # axes are rebased beacon, beacon, vector components
-    rot_u_beacons = np.einsum('wyx,zx->wzy', ROTATIONS, scn_dict[u_scan_i].u_cloud)
-    # axes are rotation, beacon, vector components
-    reb_u_beacons = np.expand_dims(rot_u_beacons, axis=1) - np.expand_dims(rot_u_beacons, axis=2)
-    # axes are rotation, rebased beacon, beacon, vector components
-
-    for s_beacon_i in range(len(s_beacons)):
-        # includes at least one scanner in the overlap cloud, if any exist
-        s_view = reb_s_beacons[s_beacon_i].view(view_dtype)
-
-        for u_beacon_i in range(len(scn_dict[u_scan_i].u_cloud)):
-            for rot_i in range(len(ROTATIONS)):
-                u_view = reb_u_beacons[rot_i][u_beacon_i].view(view_dtype)
-                matches = np.intersect1d(s_view, u_view, assume_unique=True)
-                if matches.size >= 12:
-                    return s_beacon_i, u_beacon_i, rot_i
-
-
-def count_beacons():
-    beacons = np.vstack([scn_dict[i].s_cloud for i in range(len(scanner_clouds))])
-    b_set = np.unique(beacons, axis=0)
-    return b_set.shape[0]
+# ROTATIONS = np.array([z @ xy for xy in [np.identity(3, dtype=np.int32),
+#                                         y90 @ y90,
+#                                         y90,
+#                                         y90 @ y90 @ y90,
+#                                         x90,
+#                                         x90 @ x90 @ x90]
+#                       for z in [np.identity(3, dtype=np.int32), z90, z90 @ z90, z90 @ z90 @ z90]])
 
 
 IDENTITY_ROT_I = 0
 OVERLAP_COUNT = 12
+NECESSARY_OVERLAP = (OVERLAP_COUNT * (OVERLAP_COUNT - 1)) // 2
 view_dtype = {'names': ['x', 'y', 'z'], 'formats': [int, int, int]}
+
+
+class ScannerDist:
+    """A scanner that stores pairs of beacons by their distance
+
+    Attributes:
+        index (int): the scanner's index in the list of scanners
+        cloud (np.array): the beacons the scanner can see from its own perspective, stored as rows
+        dist_to_pair (dict[int, (int, int, int)]): given a distance, returns the indices of the two beacons seen by the scanner with that distance between them
+        beacon_to_dists (dict[int, set[int]]): given the index of a beacon, returns the set of distances between that beacon and all others in the cloud
+        s_cloud (np.array): the beacons the scanner can see from the perspective of scanner 0. Matches indices with cloud
+        rotation (int): the index of the rotation that rotates this beacon's perspective to match scanner 0
+        offset (np.array): the 3-component vector from this scanner to scanner 0
+    """
+
+    def __init__(self, index, cloud):
+        self.index = index
+        self.cloud = cloud
+        self.dist_to_pair = dict()
+        self.beacon_to_dists = defaultdict(set)
+        for beacon_i in range(len(cloud)):
+            for beacon_j in range(beacon_i + 1, len(cloud)):
+                vector = cloud[beacon_i] - cloud[beacon_j]
+                dist = sum(vector ** 2)
+                if dist not in self.dist_to_pair:
+                    self.dist_to_pair[dist] = (beacon_i, beacon_j, vector)
+                    self.beacon_to_dists[beacon_i].add(dist)
+                    self.beacon_to_dists[beacon_j].add(dist)
+                else:
+                    raise KeyError("distance collision on scanner {} btw pairs ({}, {}) and {}".format(
+                        self.index, beacon_i,
+                        beacon_j,
+                        self.dist_to_pair[dist][0:2]))
+        if 0 == self.index:
+            self.s_cloud = self.cloud
+            self.rotation = IDENTITY_ROT_I
+            self.offset = np.zeros(3)
+        else:
+            self.s_cloud = None
+            self.rotation = None
+            self.offset = None
+
+    def solve(self, rotation_i, offset):
+        self.rotation = rotation_i
+        einsum = np.einsum('ab,vb->va', ROTATIONS[rotation_i], scan_lst[u_scan_i].cloud)
+        self.s_cloud = einsum + offset
+        x = np.intersect1d(scan_lst[self.index].s_cloud.view(view_dtype),
+                           scan_lst[s_scan_i].s_cloud.view(view_dtype))
+
+    def __repr__(self):
+        return f"Distance Scanner {self.index}"
+
+
+def find_rotation(dist, s_i, u_i):
+    vec_solved = scan_lst[s_i].dist_to_pair[dist][2]
+    vec_unsolved = scan_lst[u_i].dist_to_pair[dist][2]
+    rotated_vectors = np.einsum('wvc,c->wv', ROTATIONS, vec_unsolved)
+    _, isFlipped, rot_i = np.intersect1d((vec_solved * np.array([1, -1])[:, np.newaxis]).view(view_dtype),
+                                         rotated_vectors.view(view_dtype),
+                                         return_indices=True)
+    return rot_i, isFlipped
+
+
+def find_offset(dist, rot, flipped, s_i, u_i):
+    s_beacon_i = scan_lst[s_i].dist_to_pair[dist][0]
+    u_beacon_i = scan_lst[u_i].dist_to_pair[dist][flipped]
+
+    offset = np.einsum('vc,c->v', ROTATIONS[rot], scan_lst[u_i].cloud[u_beacon_i]) - scan_lst[s_i].s_cloud[
+        s_beacon_i]
+    return offset
+
+    # s_cloud_rebase = scan_lst[s_i].cloud - scan_lst[s_i].cloud[s_beacon]
+    #
+    # rot_u_cloud = np.einsum('ab,vb->va', ROTATIONS[rot], scan_lst[u_i].cloud)
+    # u_beacon_a, u_beacon_b, _ = scan_lst[u_i].dist_to_pair[dist]
+    #
+    # if np.intersect1d(s_cloud_rebase.view(view_dtype),
+    #                   (rot_u_cloud - rot_u_cloud[u_beacon_a]).view(view_dtype)).size >= OVERLAP_COUNT:
+    #     return scan_lst[s_i].cloud[s_beacon] - rot_u_cloud[u_beacon_a]
+    # elif np.intersect1d(s_cloud_rebase.view(view_dtype),
+    #                     (rot_u_cloud - rot_u_cloud[u_beacon_b]).view(view_dtype)).size >= OVERLAP_COUNT:
+    #     return scan_lst[s_i].cloud[s_beacon] - rot_u_cloud[u_beacon_b]
+    # else:
+    #     return None  # we got a false positive. This should never come up
+
+
+def match_beacons(dist, scanner_i0, scanner_i1, scanner_list):
+    """Returns a pair of pairs of matched beacons (scanner_i0, scanner_i1)"""
+
+    scanner_0 = scanner_list[scanner_i0]
+
+    scanner_1 = scanner_list[scanner_i1]
+    s0b0, s0b1, _ = scanner_0.dist_to_pair[dist]
+    s1b0, s1b1, _ = scanner_1.dist_to_pair[dist]
+
+    def are_same_beacon(b1, b2):
+        return len(scanner_0.beacon_to_dists[b1] & scanner_1.beacon_to_dists[b2]) >= OVERLAP_COUNT - 1
+
+    if are_same_beacon(s0b0, s1b0):
+        return (s0b0, s0b1), (s1b0, s1b1)
+    elif are_same_beacon(s0b0, s1b1):
+        return (s0b0, s0b1,), (s1b1, s1b0)
 
 
 if __name__ == '__main__':
     scanner_clouds = read_input('inputs/D19test.txt')
     # scanner_clouds = read_input('inputs/D19.txt')
-    scn_dict = {i: Scanner(i, scanner_clouds) for i in range(len(scanner_clouds))}  # comparison tracker
 
-    find_matches()
-    num_beacons = count_beacons()
-    print(num_beacons)
-    pass
+    scan_lst = [ScannerDist(i, scanner_clouds[i]) for i in range(len(scanner_clouds))]
+
+    scanner_queue = deque()
+    scanner_queue.append(0)
+    u_scanners = {i for i in range(1, len(scan_lst))}
+
+    while scanner_queue:
+        s_scan_i = scanner_queue.pop()
+        newly_solved = set()
+        for u_scan_i in u_scanners:
+            dist_intersect = scan_lst[s_scan_i].dist_to_pair.keys() & scan_lst[
+                u_scan_i].dist_to_pair.keys()
+            if len(dist_intersect) >= NECESSARY_OVERLAP:
+                for shared_dist in dist_intersect:
+                    ordered_beacons = match_beacons(shared_dist, s_scan_i, u_scan_i, scan_lst)
+                    ssb0 = scan_lst[s_scan_i].cloud[ordered_beacons[0][0]]
+                    ssb1 = scan_lst[s_scan_i].cloud[ordered_beacons[0][1]]
+                    usb0 = scan_lst[u_scan_i].cloud[ordered_beacons[1][0]]
+                    usb1 = scan_lst[u_scan_i].cloud[ordered_beacons[1][1]]
+                    s_vector = ssb0 \
+                               - ssb1
+                    u_vector = usb0 \
+                               - usb1
+                    1 == 1
+                    try:
+                        rotation, isFlipped = find_rotation(shared_dist, s_scan_i, u_scan_i)
+                        rotation = rotation[0]
+                        isFlipped = isFlipped[0]
+                    except IndexError:
+                        continue
+                    offset = find_offset(shared_dist, rotation, isFlipped, s_scan_i, u_scan_i)
+                    scan_lst[u_scan_i].solve(rotation, offset)
+                    newly_solved.add(u_scan_i)
+                    break
+        scanner_queue.extend(newly_solved)
+        u_scanners.difference_update(newly_solved)
