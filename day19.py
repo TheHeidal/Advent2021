@@ -95,15 +95,6 @@ neg_z = [y90 @ y90 @ y90 @ zr for zr in [np.identity(3, dtype=np.int32), z90, z9
 # probably should convert to enumeration
 ROTATIONS = np.concatenate([pos_x, neg_x, pos_y, neg_y, pos_z, neg_z])
 
-# ROTATIONS = np.array([z @ xy for xy in [np.identity(3, dtype=np.int32),
-#                                         y90 @ y90,
-#                                         y90,
-#                                         y90 @ y90 @ y90,
-#                                         x90,
-#                                         x90 @ x90 @ x90]
-#                       for z in [np.identity(3, dtype=np.int32), z90, z90 @ z90, z90 @ z90 @ z90]])
-
-
 IDENTITY_ROT_I = 0
 OVERLAP_COUNT = 12
 NECESSARY_OVERLAP = (OVERLAP_COUNT * (OVERLAP_COUNT - 1)) // 2
@@ -143,11 +134,9 @@ class ScannerDist:
                         self.dist_to_pair[dist][0:2]))
         if 0 == self.index:
             self.s_cloud = self.cloud
-            self.rotation = IDENTITY_ROT_I
-            self.offset = np.zeros(3)
+            self.offset = np.zeros(3, dtype=np.int32)
         else:
             self.s_cloud = None
-            self.rotation = None
             self.offset = None
 
     def solve(self, rotation_i, offset):
@@ -179,26 +168,11 @@ def find_offset(dist, rot, flipped, s_i, u_i):
         s_beacon_i]
     return offset
 
-    # s_cloud_rebase = scan_lst[s_i].cloud - scan_lst[s_i].cloud[s_beacon]
-    #
-    # rot_u_cloud = np.einsum('ab,vb->va', ROTATIONS[rot], scan_lst[u_i].cloud)
-    # u_beacon_a, u_beacon_b, _ = scan_lst[u_i].dist_to_pair[dist]
-    #
-    # if np.intersect1d(s_cloud_rebase.view(view_dtype),
-    #                   (rot_u_cloud - rot_u_cloud[u_beacon_a]).view(view_dtype)).size >= OVERLAP_COUNT:
-    #     return scan_lst[s_i].cloud[s_beacon] - rot_u_cloud[u_beacon_a]
-    # elif np.intersect1d(s_cloud_rebase.view(view_dtype),
-    #                     (rot_u_cloud - rot_u_cloud[u_beacon_b]).view(view_dtype)).size >= OVERLAP_COUNT:
-    #     return scan_lst[s_i].cloud[s_beacon] - rot_u_cloud[u_beacon_b]
-    # else:
-    #     return None  # we got a false positive. This should never come up
-
 
 def match_beacons(dist, scanner_i0, scanner_i1, scanner_list):
     """Returns a pair of pairs of matched beacons (scanner_i0, scanner_i1)"""
 
     scanner_0 = scanner_list[scanner_i0]
-
     scanner_1 = scanner_list[scanner_i1]
     s0b0, s0b1, _ = scanner_0.dist_to_pair[dist]
     s1b0, s1b1, _ = scanner_1.dist_to_pair[dist]
@@ -220,35 +194,38 @@ if __name__ == '__main__':
 
     scanner_queue = deque()
     scanner_queue.append(0)
-    u_scanners = {i for i in range(1, len(scan_lst))}
+    u_scanners_set = {i for i in range(1, len(scan_lst))}
 
     while scanner_queue:
         s_scan_i = scanner_queue.pop()
+        s_scanner = scan_lst[s_scan_i]
         newly_solved = set()
-        for u_scan_i in u_scanners:
-            dist_intersect = scan_lst[s_scan_i].dist_to_pair.keys() & scan_lst[
-                u_scan_i].dist_to_pair.keys()
+        for u_scan_i in u_scanners_set:
+            u_scanner = scan_lst[u_scan_i]
+            logging.debug(f"attempting to solve {u_scanner} with {s_scanner}")
+            dist_intersect = s_scanner.dist_to_pair.keys() & u_scanner.dist_to_pair.keys()
             if len(dist_intersect) >= NECESSARY_OVERLAP:
+                logging.debug(f"overlap found")
                 for shared_dist in dist_intersect:
-                    ordered_beacons = match_beacons(shared_dist, s_scan_i, u_scan_i, scan_lst)
-                    ssb0 = scan_lst[s_scan_i].cloud[ordered_beacons[0][0]]
-                    ssb1 = scan_lst[s_scan_i].cloud[ordered_beacons[0][1]]
-                    usb0 = scan_lst[u_scan_i].cloud[ordered_beacons[1][0]]
-                    usb1 = scan_lst[u_scan_i].cloud[ordered_beacons[1][1]]
-                    s_vector = ssb0 \
-                               - ssb1
-                    u_vector = usb0 \
-                               - usb1
-                    1 == 1
-                    try:
-                        rotation, isFlipped = find_rotation(shared_dist, s_scan_i, u_scan_i)
-                        rotation = rotation[0]
-                        isFlipped = isFlipped[0]
-                    except IndexError:
-                        continue
-                    offset = find_offset(shared_dist, rotation, isFlipped, s_scan_i, u_scan_i)
-                    scan_lst[u_scan_i].solve(rotation, offset)
-                    newly_solved.add(u_scan_i)
                     break
+                s_beacons, u_beacons = match_beacons(shared_dist, s_scan_i, u_scan_i, scan_lst)
+                s_vector = s_scanner.s_cloud[s_beacons[0]] - s_scanner.s_cloud[s_beacons[1]]
+                assert 0 not in s_vector
+                u_vector = u_scanner.cloud[u_beacons[0]] - u_scanner.cloud[u_beacons[1]]
+                assert 0 not in u_vector
+                rotation = np.array(
+                    [[1 if s_vector[s] == u_vector[u] else (-1 if s_vector[s] == -u_vector[u] else 0) for s in range(3)]
+                     for u in range(3)])
+                offset = s_scanner.s_cloud[s_beacons[0]] - (u_scanner.cloud[u_beacons[0]] @ rotation)
+                u_scanner.s_cloud = np.einsum("bc,rc->br", u_scanner.cloud, rotation) + offset
+                assert OVERLAP_COUNT <= len(np.intersect1d(s_scanner.s_cloud.view(view_dtype),
+                                                           u_scanner.s_cloud.view(view_dtype)))
+                u_scanner.offset = offset
+                newly_solved.add(u_scan_i)
         scanner_queue.extend(newly_solved)
-        u_scanners.difference_update(newly_solved)
+        u_scanners_set.difference_update(newly_solved)
+    assert not u_scanners_set
+    for s in scan_lst:
+        print(s.offset)
+    num_beacons = np.unique(np.vstack([s.s_cloud for s in scan_lst]).view(view_dtype))
+    print(len(num_beacons))
