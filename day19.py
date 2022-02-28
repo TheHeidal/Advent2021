@@ -1,8 +1,8 @@
 import logging
 import re
+import numpy as np
 from collections import deque, defaultdict
 
-import numpy as np
 
 logging.basicConfig(filename='day19.log',
                     encoding='utf-8',
@@ -24,7 +24,6 @@ def read_input(filename):
         match_scanner = scanner_name.match(line)
         if match_scanner:
             curr_ls = []
-            curr_scanner = int(match_scanner.group(1))
         elif line == '\n':
             scanner_lists.append(np.array(curr_ls))
         else:
@@ -34,68 +33,6 @@ def read_input(filename):
     return scanner_lists
 
 
-def match_array(match_obj):
-    """Translate a match object into a list"""
-    return [int(match_obj.group(1)),
-            int(match_obj.group(2)),
-            int(match_obj.group(3))]
-
-
-class Scanner:
-    def __init__(self, index, clouds):
-        self.index = index  # index of the scanner's cloud in scanner_clouds
-        self.uncompared = set(range(len(clouds))) - {index}
-        self.u_cloud = clouds[index]
-        if index == 0:
-            self.location = np.array([0, 0, 0])
-            self.s_cloud = clouds[index]
-            self.rotation_i = IDENTITY_ROT_I
-            self.isSolved = True
-        else:
-            self.isSolved = False
-            self.location = None
-            self.solved_from = None
-            self.rotation_i = None
-            self.s_cloud = None
-
-    def solve(self, s_scanner_i, solved_beacon_i, self_beacon_i, rotation_i):
-        self.isSolved = True
-        self.solved_from = s_scanner_i
-        self.rotation_i = rotation_i
-
-        rotated_cloud = np.einsum('yx,zx->zy', ROTATIONS[rotation_i], self.u_cloud)
-        s_beacon_coord = scn_dict[s_scanner_i].s_cloud[solved_beacon_i]
-        offset = s_beacon_coord - rotated_cloud[self_beacon_i]
-        self.s_cloud = rotated_cloud + offset
-        self.location = scn_dict[s_scanner_i].location + offset
-        logging.info(f"solved scanner {self.index}!")
-
-    def __repr__(self):
-        return f"scanner {self.index}"
-
-
-x90 = np.array([[1, 0, 0],
-                [0, 0, -1],
-                [0, 1, 0]], dtype=np.int32)
-y90 = np.array([[0, 0, 1],
-                [0, 1, 0],
-                [-1, 0, 0]], dtype=np.int32)
-z90 = np.array([[0, -1, 0],
-                [1, 0, 0],
-                [0, 0, 1]], dtype=np.int32)
-
-# assume scanner starts facing positive x
-pos_x = [np.identity(3, dtype=np.int32), x90, x90 @ x90, x90 @ x90 @ x90]
-neg_x = [z90 @ z90 @ xr for xr in pos_x]
-pos_y = [z90 @ yr for yr in [np.identity(3, dtype=np.int32), y90, y90 @ y90, y90 @ y90 @ y90]]
-neg_y = [z90 @ z90 @ z90 @ yr for yr in [np.identity(3, dtype=np.int32), y90, y90 @ y90, y90 @ y90 @ y90]]
-pos_z = [y90 @ zr for zr in [np.identity(3, dtype=np.int32), z90, z90 @ z90, z90 @ z90 @ z90]]
-neg_z = [y90 @ y90 @ y90 @ zr for zr in [np.identity(3, dtype=np.int32), z90, z90 @ z90, z90 @ z90 @ z90]]
-
-# probably should convert to enumeration
-ROTATIONS = np.concatenate([pos_x, neg_x, pos_y, neg_y, pos_z, neg_z])
-
-IDENTITY_ROT_I = 0
 OVERLAP_COUNT = 12
 NECESSARY_OVERLAP = (OVERLAP_COUNT * (OVERLAP_COUNT - 1)) // 2
 view_dtype = {'names': ['x', 'y', 'z'], 'formats': [int, int, int]}
@@ -139,34 +76,8 @@ class ScannerDist:
             self.s_cloud = None
             self.offset = None
 
-    def solve(self, rotation_i, offset):
-        self.rotation = rotation_i
-        einsum = np.einsum('ab,vb->va', ROTATIONS[rotation_i], scan_lst[u_scan_i].cloud)
-        self.s_cloud = einsum + offset
-        x = np.intersect1d(scan_lst[self.index].s_cloud.view(view_dtype),
-                           scan_lst[s_scan_i].s_cloud.view(view_dtype))
-
     def __repr__(self):
         return f"Distance Scanner {self.index}"
-
-
-def find_rotation(dist, s_i, u_i):
-    vec_solved = scan_lst[s_i].dist_to_pair[dist][2]
-    vec_unsolved = scan_lst[u_i].dist_to_pair[dist][2]
-    rotated_vectors = np.einsum('wvc,c->wv', ROTATIONS, vec_unsolved)
-    _, isFlipped, rot_i = np.intersect1d((vec_solved * np.array([1, -1])[:, np.newaxis]).view(view_dtype),
-                                         rotated_vectors.view(view_dtype),
-                                         return_indices=True)
-    return rot_i, isFlipped
-
-
-def find_offset(dist, rot, flipped, s_i, u_i):
-    s_beacon_i = scan_lst[s_i].dist_to_pair[dist][0]
-    u_beacon_i = scan_lst[u_i].dist_to_pair[dist][flipped]
-
-    offset = np.einsum('vc,c->v', ROTATIONS[rot], scan_lst[u_i].cloud[u_beacon_i]) - scan_lst[s_i].s_cloud[
-        s_beacon_i]
-    return offset
 
 
 def match_beacons(dist, scanner_i0, scanner_i1, scanner_list):
