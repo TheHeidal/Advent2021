@@ -1,0 +1,615 @@
+2022-03-03 17:55:48 INFO     reading inputs/D19.txt
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 1 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 2 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 3 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 4 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 5 with Scanner 0
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 5 and Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 6 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 7 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 8 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 9 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 10 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 11 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 12 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 13 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 14 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 15 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 16 with Scanner 0
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 16 and Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 17 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 18 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 19 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 20 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 21 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 22 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 23 with Scanner 0
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 1 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 2 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 3 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 4 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 6 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 7 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 8 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 9 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 10 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 11 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 12 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 13 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 14 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 15 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 17 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 18 with Scanner 5
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 18 and Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 19 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 20 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 21 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 22 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 23 with Scanner 5
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 1 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 2 with Scanner 18
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 2 and Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 3 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 4 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 6 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 7 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 8 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 9 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 10 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 11 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 12 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 13 with Scanner 18
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 13 and Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 14 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 15 with Scanner 18
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 15 and Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 17 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 19 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 20 with Scanner 18
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 20 and Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 21 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 22 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 23 with Scanner 18
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 1 with Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 3 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 3 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 4 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 4 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 6 with Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 7 with Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 8 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 8 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 9 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 9 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 10 with Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 11 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 11 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 12 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 12 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 14 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 14 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 17 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 17 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 19 with Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 21 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 21 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 22 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 22 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 23 with Scanner 15
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 23 and Scanner 15
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 1 with Scanner 23
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 1 and Scanner 23
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 6 with Scanner 23
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 6 and Scanner 23
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 7 with Scanner 23
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 10 with Scanner 23
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 10 and Scanner 23
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 19 with Scanner 23
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 7 with Scanner 6
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 7 and Scanner 6
+2022-03-03 17:55:48 DEBUG    attempting to solve Scanner 19 with Scanner 6
+2022-03-03 17:55:48 DEBUG    overlap between Scanner 19 and Scanner 6
+2022-03-03 17:57:29 INFO     reading inputs/D19.txt
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 1 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 2 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 3 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 4 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 5 with Scanner 0
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 5 and Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 6 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 7 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 8 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 9 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 10 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 11 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 12 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 13 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 14 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 15 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 16 with Scanner 0
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 16 and Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 17 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 18 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 19 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 20 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 21 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 22 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 23 with Scanner 0
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 1 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 2 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 3 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 4 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 6 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 7 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 8 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 9 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 10 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 11 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 12 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 13 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 14 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 15 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 17 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 18 with Scanner 5
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 18 and Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 19 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 20 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 21 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 22 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 23 with Scanner 5
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 1 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 2 with Scanner 18
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 2 and Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 3 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 4 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 6 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 7 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 8 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 9 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 10 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 11 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 12 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 13 with Scanner 18
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 13 and Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 14 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 15 with Scanner 18
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 15 and Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 17 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 19 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 20 with Scanner 18
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 20 and Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 21 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 22 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 23 with Scanner 18
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 1 with Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 3 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 3 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 4 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 4 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 6 with Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 7 with Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 8 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 8 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 9 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 9 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 10 with Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 11 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 11 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 12 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 12 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 14 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 14 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 17 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 17 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 19 with Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 21 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 21 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 22 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 22 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 23 with Scanner 15
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 23 and Scanner 15
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 1 with Scanner 23
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 1 and Scanner 23
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 6 with Scanner 23
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 6 and Scanner 23
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 7 with Scanner 23
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 10 with Scanner 23
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 10 and Scanner 23
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 19 with Scanner 23
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 7 with Scanner 6
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 7 and Scanner 6
+2022-03-03 17:57:33 DEBUG    attempting to solve Scanner 19 with Scanner 6
+2022-03-03 17:57:33 DEBUG    overlap between Scanner 19 and Scanner 6
+2022-03-03 17:58:42 INFO     reading inputs/D19.txt
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 1 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 2 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 3 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 4 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 5 with Scanner 0
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 5 and Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 6 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 7 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 8 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 9 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 10 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 11 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 12 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 13 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 14 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 15 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 16 with Scanner 0
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 16 and Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 17 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 18 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 19 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 20 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 21 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 22 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 23 with Scanner 0
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 1 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 2 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 3 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 4 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 6 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 7 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 8 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 9 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 10 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 11 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 12 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 13 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 14 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 15 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 17 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 18 with Scanner 5
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 18 and Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 19 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 20 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 21 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 22 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 23 with Scanner 5
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 1 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 2 with Scanner 18
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 2 and Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 3 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 4 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 6 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 7 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 8 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 9 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 10 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 11 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 12 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 13 with Scanner 18
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 13 and Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 14 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 15 with Scanner 18
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 15 and Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 17 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 19 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 20 with Scanner 18
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 20 and Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 21 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 22 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 23 with Scanner 18
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 1 with Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 3 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 3 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 4 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 4 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 6 with Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 7 with Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 8 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 8 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 9 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 9 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 10 with Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 11 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 11 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 12 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 12 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 14 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 14 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 17 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 17 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 19 with Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 21 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 21 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 22 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 22 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 23 with Scanner 15
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 23 and Scanner 15
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 1 with Scanner 23
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 1 and Scanner 23
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 6 with Scanner 23
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 6 and Scanner 23
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 7 with Scanner 23
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 10 with Scanner 23
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 10 and Scanner 23
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 19 with Scanner 23
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 7 with Scanner 6
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 7 and Scanner 6
+2022-03-03 17:58:42 DEBUG    attempting to solve Scanner 19 with Scanner 6
+2022-03-03 17:58:42 DEBUG    overlap between Scanner 19 and Scanner 6
+2022-03-03 17:58:54 INFO     reading inputs/D19.txt
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 1 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 2 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 3 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 4 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 5 with Scanner 0
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 5 and Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 6 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 7 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 8 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 9 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 10 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 11 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 12 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 13 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 14 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 15 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 16 with Scanner 0
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 16 and Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 17 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 18 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 19 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 20 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 21 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 22 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 23 with Scanner 0
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 1 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 2 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 3 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 4 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 6 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 7 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 8 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 9 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 10 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 11 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 12 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 13 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 14 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 15 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 17 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 18 with Scanner 5
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 18 and Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 19 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 20 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 21 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 22 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 23 with Scanner 5
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 1 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 2 with Scanner 18
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 2 and Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 3 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 4 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 6 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 7 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 8 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 9 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 10 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 11 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 12 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 13 with Scanner 18
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 13 and Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 14 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 15 with Scanner 18
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 15 and Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 17 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 19 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 20 with Scanner 18
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 20 and Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 21 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 22 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 23 with Scanner 18
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 1 with Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 3 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 3 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 4 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 4 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 6 with Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 7 with Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 8 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 8 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 9 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 9 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 10 with Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 11 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 11 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 12 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 12 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 14 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 14 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 17 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 17 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 19 with Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 21 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 21 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 22 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 22 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 23 with Scanner 15
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 23 and Scanner 15
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 1 with Scanner 23
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 1 and Scanner 23
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 6 with Scanner 23
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 6 and Scanner 23
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 7 with Scanner 23
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 10 with Scanner 23
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 10 and Scanner 23
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 19 with Scanner 23
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 7 with Scanner 6
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 7 and Scanner 6
+2022-03-03 17:58:54 DEBUG    attempting to solve Scanner 19 with Scanner 6
+2022-03-03 17:58:54 DEBUG    overlap between Scanner 19 and Scanner 6
+2022-03-03 17:59:46 INFO     reading inputs/D19.txt
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 1 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 2 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 3 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 5 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 6 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 8 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 9 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 10 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 11 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 12 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 13 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 14 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 15 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 16 with Scanner 0
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 16 and Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 17 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 18 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 21 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 23 with Scanner 0
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 1 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 2 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 3 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 5 with Scanner 16
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 5 and Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 6 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 8 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 9 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 10 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 11 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 12 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 13 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 14 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 15 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 17 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 18 with Scanner 16
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 18 and Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 21 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 23 with Scanner 16
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 1 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 2 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 3 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 6 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 8 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 9 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 10 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 11 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 12 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 13 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 14 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 15 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 17 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 21 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 23 with Scanner 5
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 1 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 2 with Scanner 18
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 2 and Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 3 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 6 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 8 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 9 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 10 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 11 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 12 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 13 with Scanner 18
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 13 and Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 14 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 15 with Scanner 18
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 15 and Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 17 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 21 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 23 with Scanner 18
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 1 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 3 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 3 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 6 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 8 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 8 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 9 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 9 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 10 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 11 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 12 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 12 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 14 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 14 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 17 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 17 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 21 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 21 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 23 with Scanner 15
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 23 and Scanner 15
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 1 with Scanner 23
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 1 and Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 6 with Scanner 23
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 6 and Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 10 with Scanner 23
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 10 and Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 11 with Scanner 23
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 11 and Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 23
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 7 with Scanner 6
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 7 and Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 19 with Scanner 6
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 19 and Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 7
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 20 with Scanner 7
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 20 and Scanner 7
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 7
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 20
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 20
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 19
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 19
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 7
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 7
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 11
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 11
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 10
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 10
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 10
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 10
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 6
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 1
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 4 with Scanner 21
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 4 and Scanner 21
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 21
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 4
+2022-03-03 17:59:46 DEBUG    attempting to solve Scanner 22 with Scanner 17
+2022-03-03 17:59:46 DEBUG    overlap between Scanner 22 and Scanner 17
