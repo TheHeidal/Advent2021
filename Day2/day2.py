@@ -6,6 +6,7 @@ def part1(lst):
         if instruction[0] == 'up': depth -= int(instruction[1])
     return h_pos * depth
 
+
 def part2(lst):
     h_pos, depth, aim = 0, 0, 0
     for instruction in lst:
@@ -18,7 +19,7 @@ def part2(lst):
 
 
 if __name__ == '__main__':
-    f = open('inputs/Day2/D2.txt', 'r')
+    f = open('D2.txt', 'r')
     input = [x.split() for x in f.readlines()]
     f.close()
     print(part1(input))

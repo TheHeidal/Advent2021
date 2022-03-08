@@ -35,7 +35,7 @@ def count_uniques():
 
 
 if __name__ == "__main__":
-    F = open("inputs/Day8/D8.txt")
+    F = open("D8.txt")
     data = F.readlines()
     F.close()
     data = [x.split("|") for x in data]

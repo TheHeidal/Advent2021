@@ -59,7 +59,7 @@ def iterate2(array):
 
 # data is accessed data[y][x] but coords are stored (x,y)
 if __name__ == '__main__':
-    f = open("inputs/Day11/D11.txt")
+    f = open("D11.txt")
     data = [[int(c) for c in l.strip()] for l in f.readlines()]
     f.close()
     max_x = len(data[0]) - 1

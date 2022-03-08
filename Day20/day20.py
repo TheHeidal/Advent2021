@@ -56,7 +56,7 @@ def moore_neighborhood(x, y):
 
 
 if __name__ == '__main__':
-    alg, img = read('inputs/Day20/D20.txt')
+    alg, img = read('D20.txt')
     image = Image(alg, img)
     image.update(updates=50)
     print(np.sum(image.data[-1]))

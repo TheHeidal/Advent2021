@@ -24,7 +24,7 @@ def fold(direction, location, array):
 
 
 if __name__ == '__main__':
-    f = open('inputs/Day13/D13.txt')
+    f = open('D13.txt')
     data = [line.strip() for line in f.readlines()]
     f.close()
     mtline = data.index("")

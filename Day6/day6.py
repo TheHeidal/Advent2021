@@ -17,5 +17,5 @@ def main(fishdist):
 
 
 if __name__ == '__main__':
-    num = readinput('inputs/Day6/D6.txt')
+    num = readinput('D6.txt')
     main(num)

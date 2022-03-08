@@ -43,7 +43,7 @@ def dfs2(curr_cave: str, path: list, dawdled: bool = False):
 
 
 if __name__ == '__main__':
-    f = open('inputs/Day12/D12.txt', 'r')
+    f = open('D12.txt', 'r')
     data = [line.strip() for line in f.readlines()]
     f.close()
     cave_dict = {}

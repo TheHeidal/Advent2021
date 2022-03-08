@@ -42,7 +42,7 @@ def score_completion(line):
 
 if __name__ == "__main__":
     test = 2
-    f = open("inputs/Day10/D10.txt", 'r')
+    f = open("D10.txt", 'r')
     data = [l.strip() for l in f.readlines()]
     f.close()
     if test == 1:

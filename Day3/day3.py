@@ -33,7 +33,7 @@ def find_life_support(lst):
 
 
 if __name__ == '__main__':
-    f = open('inputs/Day3/D3.txt', 'r')
+    f = open('D3.txt', 'r')
     input_data = [x.rstrip() for x in f.readlines()]
     f.close()
     print(findpower(input_data))

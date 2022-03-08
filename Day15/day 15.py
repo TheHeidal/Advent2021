@@ -44,7 +44,7 @@ def a_star_consumer(paths: PriorityQueue, risks: list, answer_queue):
 
 
 if __name__ == '__main__':
-    f = open('inputs/Day15/D15test.txt', 'r')
+    f = open('D15test.txt', 'r')
     risks = [[int(c) for c in line.strip()] for line in f.readlines()]
     f.close()
     max_x = len(risks[0]) - 1
