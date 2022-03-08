@@ -43,7 +43,7 @@ def findmin(costfunc=getcost_constant):
 
 
 if __name__ == '__main__':
-    f = open('inputs/D7.txt', 'r')
+    f = open('inputs/Day7/D7.txt', 'r')
     data = f.readline()
     f.close()
     costfunc = getcost_triangle

@@ -35,7 +35,7 @@ def q2():
 
 # data is accessed data[y][x] but coords are stored (x,y)
 if __name__ == "__main__":
-    f = open("inputs/D9.txt", 'r')
+    f = open("inputs/Day9/D9.txt", 'r')
     data = [[int(a) for a in b.strip()] for b in f.readlines()]
     f.close()
     max_y = len(data) - 1
