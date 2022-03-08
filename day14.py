@@ -31,7 +31,7 @@ def lookup(pair: str, steps: int, rules: dict, lookup_map: dict):
 
 
 if __name__ == '__main__':
-    f = open('inputs/D14.txt', 'r')
+    f = open('inputs/Day14/D14.txt', 'r')
     polymer = f.readline().strip()
     rules = ddict(mtstr, [x.strip().split(sep=' -> ') for x in f.readlines()[1:]])
     f.close()
