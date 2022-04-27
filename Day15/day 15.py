@@ -64,7 +64,7 @@ if __name__ == '__main__':
     # with mp.Pool(processes=4, initializer=a_star_consumer, initargs=(path_q, risks, answer_q,)) as pool:
     #     pool.close()
     # pool.terminate()
-    # pool.join()
+    # pool.merge()
 
     # processes = [mp.Process(target=a_star_consumer, args=(queue, risks)) for _ in range(4)]
     # paths = [(heuristic(0, 0), 0, [(0, 0)])]  # estimated risk, actual risk, path so far
